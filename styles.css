@@ -242,7 +242,7 @@ img {
   display: block;
   content: "";
   height: 120px;
-  background-size: contain;
+  background-size: 70px;
   background-repeat: no-repeat;
   background-position: center;
   background-color: var(--add-color);
@@ -273,14 +273,16 @@ img {
 .section-ourteam {
   background-color: var(--add-color);
 }
-.link-sec-clients {
-  display: flex;
-  height: 170px;
-}
+
 .list-logo-clients {
   --items: 6;
 }
 .sec-clients-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 170px;
+  height: 92px;
   border: 1px solid;
   border-color: var(--brdr-logo-clients);
   border-radius: 4px;
