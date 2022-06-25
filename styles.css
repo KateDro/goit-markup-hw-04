@@ -217,6 +217,7 @@ img {
   line-height: 1.19;
   letter-spacing: 0.03em;
   color: var(--main-textcolor);
+  margin-bottom: 16px;
 }
 .pfolio-header {
   font-weight: 700;
@@ -242,7 +243,7 @@ img {
   display: block;
   content: "";
   height: 120px;
-  background-size: 70px;
+  background-size: 70pxs;
   background-repeat: no-repeat;
   background-position: center;
   background-color: var(--add-color);
@@ -273,7 +274,30 @@ img {
 .section-ourteam {
   background-color: var(--add-color);
 }
-
+.social-media {
+  display: flex;
+  justify-content: center;
+}
+.social-media-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50px;
+  color: var(--brdr-logo-clients);
+}
+.social-media-list:not(:last-child) {
+  margin-right: 10px;
+}
+.social-media-link:hover,
+.social-media-link:focus {
+  color: var(--white-clr);
+  background-color: var(--brand-color);
+}
+.social-media-icon {
+  fill: currentColor;
+}
 .list-logo-clients {
   --items: 6;
 }
