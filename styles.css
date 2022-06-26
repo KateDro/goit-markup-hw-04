@@ -301,22 +301,28 @@ img {
 .list-logo-clients {
   --items: 6;
 }
-.sec-clients-item {
+.sec-clients-link {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 170px;
   height: 92px;
   border: 1px solid;
+  color: var(--brdr-logo-clients);
   border-color: var(--brdr-logo-clients);
   border-radius: 4px;
 }
-.sec-clients-item:hover,
-.sec-clients-item:focus {
+.sec-clients-link:hover,
+.sec-clients-link:focus {
+  color: var(--brand-color);
   border-color: var(--brand-color);
+}
+.sec-clients-icon {
+  fill: currentColor;
 }
 /* footer */
 footer {
+  display: flex;
   background-color: var(--secondary-bgcolor);
   padding-top: 60px;
   padding-bottom: 60px;
@@ -362,6 +368,27 @@ footer {
   line-height: 1.17;
   color: var(--white-clr);
   text-transform: uppercase;
+}
+/* foot social miedia */
+.social-media-footlink {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50px;
+  color: var(--white-clr);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.social-media-footlist:not(:last-child) {
+  margin-right: 10px;
+}
+.social-media-footlink:hover,
+.social-media-footlink:focus {
+  background-color: var(--brand-color);
+}
+.social-media-icon {
+  fill: currentColor;
 }
 
 /* portfolio */
