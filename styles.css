@@ -47,7 +47,15 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
-
+.container-footer {
+  display: flex;
+  align-items: baseline;
+  width: 1200px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
 h1,
 h2,
 h3,
@@ -84,36 +92,49 @@ img {
 .header-bord {
   border-bottom: 1px solid var(--border-head-clr);
 }
-.header-list {
-  display: flex;
-}
 .header-container {
   display: flex;
   align-items: center;
 }
-.header-contakt-link {
-  margin-left: auto;
+.nav-header {
+  display: flex;
 }
-.header-contact {
-  color: var(--main-textcolor);
+.header-nav-item {
+  display: flex;
+  align-items: center;
 }
 .header-link {
   display: block;
-  padding-top: 32px;
-  padding-bottom: 32px;
+  padding: 32px 0 32px 0;
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--header-textcolor);
-  background-color: var(--white-clr);
 }
-.header-list-item:not(:last-child) {
+.header-contakt-list {
+  display: flex;
+  margin-left: auto;
+}
+.header-contact-link {
+  color: var(--main-textcolor);
+}
+.header-nav-item:not(:last-child) {
+  justify-content: center;
   margin-right: 50px;
+}
+.header-cont-item {
+  display: flex;
+  align-items: center;
+  margin-right: 30px;
 }
 .header-link:hover,
 .header-link:focus {
   color: var(--brand-color);
+}
+.head-cont-icon {
+  fill: currentColor;
+  margin-right: 10px;
 }
 .clr-logo-header {
   color: var(--header-textcolor);
@@ -199,7 +220,7 @@ img {
   padding: 30px 0 30px 0;
   text-align: center;
 }
-.pfolio-card {
+.pfolio-card-txt {
   border: 1px solid var(--borderclr);
   border-top: none;
   padding: 20px 24px 20px 24px;
@@ -300,6 +321,9 @@ img {
 }
 .list-logo-clients {
   --items: 6;
+  display: flex;
+  margin-left: 0;
+  margin-right: 0;
 }
 .sec-clients-link {
   display: flex;
@@ -363,11 +387,15 @@ footer {
   color: var(--brand-color);
   margin-right: 93px;
 }
+.footer-address {
+  margin-right: 70px;
+}
 .foot-title-join {
   font-family: var(--main-font);
   line-height: 1.17;
   color: var(--white-clr);
   text-transform: uppercase;
+  margin-bottom: 20px;
 }
 /* foot social miedia */
 .social-media-footlink {
@@ -409,6 +437,9 @@ footer {
   display: flex;
   justify-content: center;
   margin-bottom: 50px;
+}
+.pfolio-cardlink {
+  display: block;
 }
 .pfolio-card-shadows:hover,
 .pfolio-card-shadows:focus {
