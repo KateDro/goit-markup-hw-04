@@ -10,6 +10,7 @@
   --main-bgcolor: #e5e5e5;
   --secondary-bgcolor: #2f303a;
   --add-color: #f5f4fa;
+  --about-overlay-bg: rgba(47, 48, 58, 0.8);
   /* others */
   --white-clr: #ffffff;
   --items: 3;
@@ -17,6 +18,7 @@
   --borderclr: #eeeeee;
   --border-head-clr: #ececec;
   --brdr-logo-clients: #afb1b8;
+  --transition-timing-func: cubic-bezier(0.4, 0, 0.2, 1);
 }
 body {
   font-family: var(--main-font), sans-serif;
@@ -76,17 +78,6 @@ img {
   margin: 0;
   padding: 0;
 }
-.current-link {
-  display: block;
-  padding-top: 32px;
-  padding-bottom: 32px;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 1.14;
-  letter-spacing: 0.02em;
-  color: var(--brand-color);
-  background-color: var(--white-clr);
-}
 /* common styles end */
 /* header section */
 .header-bord {
@@ -102,6 +93,7 @@ img {
 .header-nav-item {
   display: flex;
   align-items: center;
+  position: relative;
 }
 .header-link {
   display: flex;
@@ -112,6 +104,47 @@ img {
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--header-textcolor);
+  transition: color 250ms var(--transition-timing-func);
+}
+.current-link {
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+  color: var(--brand-color);
+  background-color: var(--white-clr);
+  transition: color 250ms var(--transition-timing-func);
+}
+.current-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 4px;
+  background: var(--brand-color);
+  border-radius: 2px;
+}
+.header-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 4px;
+  background: var(--brand-color);
+  border-radius: 2px;
+  opacity: 0;
+  transition: color 250ms var(--transition-timing-func);
+}
+.header-link:hover::after,
+.header-link:focus {
+  color: var(--brand-color);
+  opacity: 1;
+  transition: color 250ms var(--transition-timing-func);
 }
 .header-contakt-list {
   display: flex;
@@ -128,10 +161,6 @@ img {
   display: flex;
   align-items: center;
   margin-right: 30px;
-}
-.header-link:hover,
-.header-link:focus {
-  color: var(--brand-color);
 }
 .head-cont-icon {
   fill: currentColor;
@@ -293,8 +322,26 @@ img {
 .sec-about {
   padding-top: 0;
 }
+.cont-about-item {
+  position: relative;
+}
 .cont-about-item:not(:last-child) {
   margin-right: 30px;
+}
+.cont-about-overlay {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 23.8%;
+  background: var(--about-overlay-bg);
+  font-weight: 700;
+  line-height: 1.14;
+  text-transform: uppercase;
+  color: var(--white-clr);
 }
 .section-ourteam {
   background-color: var(--add-color);
@@ -311,6 +358,8 @@ img {
   height: 44px;
   border-radius: 50px;
   color: var(--brdr-logo-clients);
+  transition: background-color 250ms var(--transition-timing-func),
+    color 250ms var(--transition-timing-func);
 }
 .social-media-list:not(:last-child) {
   margin-right: 10px;
@@ -338,6 +387,8 @@ img {
   color: var(--brdr-logo-clients);
   border-color: var(--brdr-logo-clients);
   border-radius: 4px;
+  transition: border-color 250ms var(--transition-timing-func),
+    color 250ms var(--transition-timing-func);
 }
 .sec-clients-link:hover,
 .sec-clients-link:focus {
@@ -411,6 +462,7 @@ footer {
   border-radius: 50px;
   color: var(--white-clr);
   background-color: rgba(255, 255, 255, 0.1);
+  transition: background-color 250ms var(--transition-timing-func);
 }
 .social-media-footlist:not(:last-child) {
   margin-right: 10px;
@@ -428,6 +480,9 @@ footer {
   border: none;
   border-radius: 4px;
   background-color: var(--add-color);
+  transition: background-color 250ms var(--transition-timing-func),
+    color 250ms var(--transition-timing-func),
+    box-shadow 250ms var(--transition-timing-func);
 }
 .btn-pfolio:hover,
 .btn-pfolio:focus {
@@ -436,6 +491,27 @@ footer {
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
   border-radius: 4px;
+}
+.pfolio-card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: "";
+  background-color: rgba(33, 150, 243, 0.9);
+  transform: translateY(101%);
+  transition: transform 250ms var(--transition-timing-func);
+}
+.pfolio-card-thumb {
+  position: relative;
+  overflow: hidden;
+}
+.pfolio-card-overlay-txt {
+  font-size: 18px;
+  line-height: 1.56;
+  color: var(--white-clr);
+  padding: 63px 24px;
 }
 .list-pfolio {
   display: flex;
